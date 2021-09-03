@@ -1,10 +1,10 @@
 <template>
-  <v-card>
-    <v-data-table
-      :headers="headers"
-      :items="desserts"
-    ></v-data-table>
-  </v-card>
+  <div>
+    <h1>Page 3</h1>
+    <v-card>
+      <v-data-table :headers="headers" :items="desserts"></v-data-table>
+    </v-card>
+  </div>
 </template>
 
 <script>
@@ -17,7 +17,7 @@ export default {
           align: "start",
           filterable: false,
           value: "name",
-          divider: true
+          divider: true,
         },
         { text: "Calories", value: "calories", divider: true },
         { text: "Fat (g)", value: "fat", divider: true },

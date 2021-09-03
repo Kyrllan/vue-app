@@ -1,5 +1,6 @@
 <template>
   <div>
+    <h1>Page 2</h1>
     <v-row class="d-flex justify-center">
       <v-card
         class="ma-2 pa-2"

@@ -1,4 +1,6 @@
 # vue-app
+# preview
+https://kyrllan.github.io/vue-app/
 
 ## Project setup
 ```

@@ -22,7 +22,7 @@
               inset
               class="ml-5 pl-5"
               hide-details
-              v-model="$vuetify.theme.dark"
+              v-model="dark"
               color="primary"
               :label="dark ? 'Modo escuro' : 'Modo claro'"
             ></v-switch>
@@ -70,7 +70,7 @@ export default {
       return this.$vuetify.breakpoint.smAndDown || this.toggleMini;
     },
   },
-  methods: {
+  watch: {
     dark() {
       this.$vuetify.theme.dark = this.dark;
       localStorage.setItem("dark", this.dark);

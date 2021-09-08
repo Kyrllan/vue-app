@@ -16,7 +16,7 @@
       color="nav"
     >
       <v-list>
-        <v-list-item>
+        <v-list-item class="d-flex justify-center">
           <v-list-item-content>
             <v-switch
               inset
@@ -28,6 +28,7 @@
             ></v-switch>
           </v-list-item-content>
         </v-list-item>
+        <v-divider></v-divider>
         <v-list-item
           v-for="(item, index) in items"
           :key="index"

@@ -13,8 +13,21 @@
       :permanent="sidebarMenu"
       :mini-variant.sync="mini"
       clipped
+      color="nav"
     >
       <v-list>
+        <v-list-item>
+          <v-list-item-content>
+            <v-switch
+              inset
+              class="ml-5 pl-5"
+              hide-details
+              v-model="$vuetify.theme.dark"
+              color="primary"
+              :label="dark ? 'Modo escuro' : 'Modo claro'"
+            ></v-switch>
+          </v-list-item-content>
+        </v-list-item>
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
@@ -38,6 +51,7 @@
 <script>
 export default {
   data: () => ({
+    dark: false,
     sidebarMenu: true,
     toggleMini: false,
     items: [
@@ -48,9 +62,18 @@ export default {
       { title: "Page 3", route: "/page-3", icon: "mdi-bus-clock" },
     ],
   }),
+  mounted() {
+    this.dark = localStorage.getItem("dark") === "true" ? true : false;
+  },
   computed: {
     mini() {
       return this.$vuetify.breakpoint.smAndDown || this.toggleMini;
+    },
+  },
+  methods: {
+    dark() {
+      this.$vuetify.theme.dark = this.dark;
+      localStorage.setItem("dark", this.dark);
     },
   },
 };

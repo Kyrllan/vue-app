@@ -1,34 +1,33 @@
 <template>
   <div>
-    <v-app-bar clipped-left app color="primary" dark>
+    <v-app-bar clipped-left app color="primary" dark height="80">
       <v-app-bar-nav-icon
         @click.stop="sidebarMenu = !sidebarMenu"
       ></v-app-bar-nav-icon>
-      <h2>APP</h2>
+      <h2 class="py-6">APP</h2>
+      <v-spacer></v-spacer>
+      <div class="d-flex flex-column align-center">
+        <v-btn icon @click.stop="userMenu = !userMenu" elevation="2">
+          <v-avatar>
+            <img
+              src="https://cdn.vuetifyjs.com/images/lists/1.jpg"
+              alt="John"
+            />
+          </v-avatar>
+        </v-btn>
+      </div>
     </v-app-bar>
     <v-navigation-drawer
-      v-model="sidebarMenu"
-      app
+      absolute
       floating
+      v-model="sidebarMenu"
       :permanent="sidebarMenu"
       :mini-variant.sync="mini"
       clipped
       color="nav"
+      style="padding-top: 80px"
     >
       <v-list>
-        <v-list-item class="d-flex justify-center">
-          <v-list-item-content>
-            <v-switch
-              inset
-              class="ml-5 pl-5"
-              hide-details
-              v-model="dark"
-              color="primary"
-              :label="dark ? 'Modo escuro' : 'Modo claro'"
-            ></v-switch>
-          </v-list-item-content>
-        </v-list-item>
-        <v-divider></v-divider>
         <v-list-item
           v-for="(item, index) in items"
           :key="index"
@@ -46,6 +45,29 @@
         </v-list-item>
       </v-list>
     </v-navigation-drawer>
+
+    <v-expand-transition>
+      <v-card v-show="userMenu" class="avatar-card" raised>
+        <div>
+          <div class="ml-4 mb-6 d-flex flex-column align-start">
+            <h2 class="pt-4 font-weight-light">Olá</h2>
+            <h2 class="font-weight-medium">Jason Oner</h2>
+          </div>
+          <v-divider></v-divider>
+          <div class="mb-4 d-flex justify-center ">
+            <div>
+              <v-switch
+                inset
+                hide-details
+                v-model="dark"
+                color="primary"
+                :label="dark ? 'Modo escuro' : 'Modo claro'"
+              ></v-switch>
+            </div>
+          </div>
+        </div>
+      </v-card>
+    </v-expand-transition>
   </div>
 </template>
 
@@ -54,6 +76,7 @@ export default {
   data: () => ({
     dark: false,
     sidebarMenu: true,
+    userMenu: false,
     toggleMini: false,
     items: [
       { title: "Home", route: "/", icon: "mdi-home-outline" },
@@ -77,5 +100,20 @@ export default {
       localStorage.setItem("dark", this.dark);
     },
   },
+  methods: {
+    user() {
+      console.log("clicou");
+    },
+  },
 };
 </script>
+
+<style scoped>
+.avatar-card {
+  position: absolute;
+  margin-top: 70px;
+  right: 10px;
+  width: 250px;
+  z-index: 9999;
+}
+</style>

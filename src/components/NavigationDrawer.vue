@@ -1,12 +1,12 @@
 <template>
   <div>
-    <v-app-bar clipped-left app color="primary" dark height="80">
-      <v-app-bar-nav-icon
+    <v-app-bar clipped-left app color="primary" dark>
+      <!--       <v-app-bar-nav-icon
         @click.stop="sidebarMenu = !sidebarMenu"
-      ></v-app-bar-nav-icon>
+      ></v-app-bar-nav-icon> -->
       <h2 class="py-6">APP</h2>
       <v-spacer></v-spacer>
-      <div class="d-flex flex-column align-center">
+      <!--       <div class="d-flex flex-column align-center">
         <v-btn icon @click.stop="userMenu = !userMenu" elevation="2">
           <v-avatar>
             <img
@@ -15,9 +15,12 @@
             />
           </v-avatar>
         </v-btn>
-      </div>
+      </div> -->
+      <v-btn plain >
+        <v-icon color="white" left>mdi-logout-variant</v-icon>Sair
+      </v-btn>
     </v-app-bar>
-    <v-navigation-drawer
+    <!--     <v-navigation-drawer
       absolute
       floating
       v-model="sidebarMenu"
@@ -25,7 +28,7 @@
       :mini-variant.sync="mini"
       clipped
       color="nav"
-      style="padding-top: 80px"
+      app
     >
       <v-list>
         <v-list-item
@@ -54,7 +57,7 @@
             <h2 class="font-weight-medium">Jason Oner</h2>
           </div>
           <v-divider></v-divider>
-          <div class="mb-4 d-flex justify-center ">
+          <div class="mb-4 d-flex justify-center">
             <div>
               <v-switch
                 inset
@@ -67,7 +70,7 @@
           </div>
         </div>
       </v-card>
-    </v-expand-transition>
+    </v-expand-transition> -->
   </div>
 </template>
 

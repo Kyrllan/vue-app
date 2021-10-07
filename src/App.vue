@@ -1,15 +1,11 @@
 <template>
-  <v-app>
+  <v-app :style="{ background: $vuetify.theme.themes.light.background }">
     <navigation-drawer />
     <v-main>
-      <v-container class="px-4 py-0 fill-height" fluid>
-        <v-row class="fill-height">
-          <v-col>
-            <transition name="fade">
-              <router-view></router-view>
-            </transition>
-          </v-col>
-        </v-row>
+      <v-container class="px-4 fill-height">
+        <transition name="fade">
+          <router-view></router-view>
+        </transition>
       </v-container>
     </v-main>
   </v-app>

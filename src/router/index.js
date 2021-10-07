@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import Home from '../views/Home.vue'
+import Dashboard from '../module/dashboard/view/dashboard.vue'
 import Page1 from '../views/Page1.vue'
 import Page2 from '../views/Page2.vue'
 import Page3 from '../views/Page3.vue'
@@ -11,7 +11,7 @@ const routes = [
   {
     path: '/',
     name: 'Home',
-    component: Home
+    component: Dashboard
   },
   {
     path: '/about',

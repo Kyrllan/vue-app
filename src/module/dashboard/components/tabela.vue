@@ -22,11 +22,18 @@
       <cgi-data-table
         :linhas="controller.items"
         :colunas="controller.headers"
+        :carregar="controller.loading"
         altura="600"
-        paginacao-servidor
-        @paginando="paginando"
         mostra-pesquisa
       >
+        <template v-slot:valor="{ item }">
+          <v-chip
+            small
+            :color="item.valor > 0 ? 'green' : 'red'"
+            text-color="white"
+            >{{ item.valor.toLocaleString("pt-BR") }}</v-chip
+          >
+        </template>
       </cgi-data-table>
     </v-card>
   </div>

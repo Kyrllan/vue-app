@@ -7,6 +7,7 @@ export default class DashboardController {
   balanceAvailableChart = null;
   dialog = null;
   contextDialog = null;
+  loading = false;
 
   cards = [
     {
@@ -53,31 +54,126 @@ export default class DashboardController {
   };
 
   items = [
-    { col1: "Teste", col2: "Teste", col3: "Teste" },
-    { col1: "Teste 2", col2: "Teste 2", col3: "Teste 2" },
-    { col1: "Teste 3", col2: "Teste 3", col3: "Teste 3" },
+    {
+      fil: "001",
+      doc: "575/32",
+      parc: "1",
+      placa: "JAP 9B18",
+      motorista: "ADÃO PEDRO BOEIRA",
+      obrigacao: "Fretes a Pagar PJ-Associados",
+      tipo: "Fatura de Frete - Fatura",
+      vencto: "17/09/2021",
+      valor: 359.52,
+    },
+    {
+      fil: "001",
+      doc: "575/32",
+      parc: "1",
+      placa: "JAP 9B18",
+      motorista: "ADÃO PEDRO BOEIRA",
+      obrigacao: "Fretes a Pagar PJ-Associados",
+      tipo: "Fatura de Frete - Fatura",
+      vencto: "17/09/2021",
+      valor: 359.52,
+    },
+    {
+      fil: "001",
+      doc: "575/32",
+      parc: "1",
+      placa: "JAP 9B18",
+      motorista: "ADÃO PEDRO BOEIRA",
+      obrigacao: "Fretes a Pagar PJ-Associados",
+      tipo: "Fatura de Frete - Fatura",
+      vencto: "17/09/2021",
+      valor: 359.52,
+    },
+    {
+      fil: "001",
+      doc: "575/32",
+      parc: "1",
+      placa: "JAP 9B18",
+      motorista: "ADON PEDRO BOEIRA",
+      obrigacao: "Fretes a Pagar PJ-Associados",
+      tipo: "Fatura de Frete - Fatura",
+      vencto: "17/09/2021",
+      valor: -359.52,
+    },
+    {
+      fil: "002",
+      doc: "575/32",
+      parc: "1",
+      placa: "JAP 9B18",
+      motorista: "ADÃO PEDRO BOEIRA",
+      obrigacao: "Fretes a Pagar PJ-Associados",
+      tipo: "Fatura de Frete - Fatura",
+      vencto: "17/09/2021",
+      valor: 359.52,
+    },
   ];
   headers = [
     {
-      text: "Coluna 1",
+      text: "Fil",
       align: "start",
       sortable: true,
-      value: "col1",
+      value: "fil",
       divider: true,
     },
     {
-      text: "Coluna 2",
+      text: "Doc",
       align: "start",
       sortable: true,
-      value: "col2",
+      value: "doc",
       divider: true,
     },
     {
-      text: "Coluna 2",
+      text: "Parc",
       align: "start",
       sortable: true,
-      value: "col2",
+      value: "parc",
       divider: true,
+    },
+    {
+      text: "Placa",
+      align: "start",
+      sortable: true,
+      value: "placa",
+      divider: true,
+    },
+    {
+      text: "Motorista",
+      align: "start",
+      sortable: true,
+      value: "motorista",
+      divider: true,
+    },
+    {
+      text: "Obrigação",
+      align: "start",
+      sortable: true,
+      value: "obrigacao",
+      divider: true,
+    },
+    {
+      text: "Tipo",
+      align: "start",
+      sortable: true,
+      value: "tipo",
+      divider: true,
+    },
+    {
+      text: "Vencimento",
+      align: "start",
+      sortable: true,
+      value: "vencto",
+      divider: true,
+    },
+    {
+      text: "Valor",
+      align: "center",
+      sortable: true,
+      value: "valor",
+      divider: true,
+      custom: true,
     },
   ];
 

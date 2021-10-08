@@ -28,7 +28,7 @@
             <v-divider></v-divider>
             <div class="pt-1 d-flex align-center">
               <v-icon small>mdi-clock-time-eight-outline</v-icon>
-              <h4 class="pl-1 font-weight-regular">
+              <h4 class="pl-1 pt-1 font-weight-regular">
                 Atualizado em
                 {{ dayjs(new Date()).format("DD/MM/YYYY - HH:mm:ss") }}
               </h4>
@@ -63,7 +63,7 @@
             <v-divider></v-divider>
             <div class="pt-1 d-flex align-center">
               <v-icon small>mdi-clock-time-eight-outline</v-icon>
-              <h4 class="pl-1 font-weight-regular">
+              <h4 class="pl-1 pt-1 font-weight-regular">
                 Atualizado em
                 {{ dayjs(new Date()).format("DD/MM/YYYY - HH:mm:ss") }}
               </h4>

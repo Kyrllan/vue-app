@@ -4,9 +4,7 @@
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "build": "vue-cli-service build"
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",

@@ -1,10 +1,13 @@
 {
+  "homepage": "https://kyrllan.github.io/vue-app/",
   "name": "vue-app",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build"
+    "build": "vue-cli-service build",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@mdi/font": "^5.9.55",

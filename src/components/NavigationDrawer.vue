@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-app-bar clipped-left app color="blue" dark>
+    <v-app-bar clipped-left app color="#e91e63" dark>
       <h2 class="py-6">APP</h2>
       <v-spacer></v-spacer>
       <v-btn plain>
